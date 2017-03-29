@@ -61,7 +61,7 @@ suite = {
   "distributions" : {
     "SYSLOGJDBC" : {
       "path" : "build/syslog_ng_jdbc.jar",
-      "subDir" : "core",
+      "subDir" : "syslog-ng-jdbc",
       "sourcesPath" : "build/syslog_ng_jdbc.src.zip",
       "dependencies" : [
         "com.everyware.syslog_ng"
