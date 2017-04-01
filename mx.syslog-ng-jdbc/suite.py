@@ -16,7 +16,7 @@ suite = {
     "SYSLOGNG" : {
       "path" : "lib/syslog_ng.jar",
       "urls" : [
-        "https://orakel.has.enough.coffee/files/syslog_ng.jar"
+        "https://orakel.has.enough.coffee/repo/syslog_ng.jar"
       ],
       "sha1" : "c76201a9e24eb6c1b54cc73c0be46be983627a86",
       "maven" : {
@@ -66,12 +66,22 @@ suite = {
       "dependencies" : [
         "com.everyware.syslog_ng"
       ],
-      "distDependencies" : [
-        "SYSLOGNG"
+      "exclude": [
+        "SYSLOGNG",
+        "mx:JUNIT"
+      ]
+    },
+
+    "SYSLOGJDBC_TEST" : {
+      "path" : "build/syslog_ng_jdbc_test.jar",
+      "subDir" : "syslog-ng-jdbc",
+      "sourcesPath" : "build/syslog_ng_jdbc_test.src.zip",
+      "dependencies" : [
+        "com.everyware.syslog_ng.test"
       ],
       "exclude": [
         "mx:JUNIT"
       ]
     }
- }
+  }
 }
