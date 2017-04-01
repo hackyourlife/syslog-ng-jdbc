@@ -9,24 +9,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
-/*
- * mkdir -p /opt/syslog-ng-jdbc
- * wget -O /opt/syslog-ng-jdbc/db2jcc4.jar http://repository.linz.lan/db2/db2jcc4.jar
- * wget -O /opt/syslog-ng-jdbc/db2jcc_license_cisuz.jar http://repository.linz.lan/db2/db2jcc_license_cisuz.jar
- * destination d_java {
- * 	java(
- * 		class_path("/opt/syslog-ng-jdbc/db2jcc4.jar:/opt/syslog-ng-jdbc/db2jcc_license_cisuz.jar:/opt/syslog-ng-jdbc/syslog_ng_jdbc.jar")
- * 		class_name("com.everyware.syslog_ng.JdbcDestination")
- * 		template("${ISODATE} ${PRI:-00} ${LEVEL} ${FULLHOST_FROM:-unknown} ${HOST:-unknown} ${FACILITY_NUM:-0} ${FACILITY:-unknown} ${PROGRAM:-unknown} ${PID:-0} ${MSGONLY}")
- * 		option("driver", "com.ibm.db2.jcc.DB2Driver")
- * 		option("url", "jdbc:db2://db2node01.db2.lan:50000/evryware:currentSchema=RSYSLOG;enableSysplexWLB=true;")
- * 		option("username", "rsyslog")
- * 		option("password", "top-secret")
- * 	);
- * };
- * log { source(s_sys); destination(d_java); };
- */
-
 public class JdbcDestination extends TextLogDestination {
 	private static final String STATEMENT = "INSERT INTO MESSAGES (TIME, "
 			+ "HOST, SOURCE, PRIORITY, LEVEL, FACILITY_NUM, "
