@@ -68,7 +68,6 @@ suite = {
       ],
       "exclude": [
         "SYSLOGNG",
-        "mx:JUNIT"
       ]
     },
 
@@ -78,6 +77,9 @@ suite = {
       "sourcesPath" : "build/syslog_ng_jdbc_test.src.zip",
       "dependencies" : [
         "com.everyware.syslog_ng.test"
+      ],
+      "distDependencies" : [
+        "SYSLOGJDBC"
       ],
       "exclude": [
         "mx:JUNIT"
